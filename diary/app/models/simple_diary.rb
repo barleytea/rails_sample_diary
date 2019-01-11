@@ -1,0 +1,2 @@
+class SimpleDiary < ApplicationRecord
+end

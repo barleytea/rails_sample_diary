@@ -1,0 +1,27 @@
+<%= form_with(model: simple_diary, local: true) do |form| %>
+  <% if simple_diary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(simple_diary.errors.count, "error") %> prohibited this simple_diary from being saved:</h2>
+
+      <ul>
+      <% simple_diary.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

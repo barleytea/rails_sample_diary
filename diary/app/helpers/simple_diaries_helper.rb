@@ -1,0 +1,2 @@
+module SimpleDiariesHelper
+end

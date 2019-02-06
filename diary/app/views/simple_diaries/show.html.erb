@@ -1,14 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>ID:</strong>
+  <%= @simple_diary.id %>
+</p>
+<p>
+  <strong>タイトル:</strong>
   <%= @simple_diary.title %>
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong>本文:</strong>
   <%= @simple_diary.body %>
 </p>
 
-<%= link_to 'Edit', edit_simple_diary_path(@simple_diary) %> |
-<%= link_to 'Back', simple_diaries_path %>
+<p>
+  <strong>登録日時:</strong>
+  <%= @simple_diary.created_at %>
+</p>
+
+<p>
+  <strong>更新日時:</strong>
+  <%= @simple_diary.updated_at %>
+</p>
+
+<%= link_to '編集', edit_simple_diary_path(@simple_diary) %> |
+<%= link_to '削除', @simple_diary, method: :delete, data: { confirm: '本当に削除しますか' } %> |
+<%= link_to '一覧に戻る', simple_diaries_path %>
